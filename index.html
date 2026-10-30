@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101522">
+<meta name="description" content="NOVA PLAY — متجر تجريبي للألعاب والتطبيقات">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.png" type="image/png">
+<title>NOVA PLAY</title>
+<style>
+:root{color-scheme:dark;--bg:#0c111b;--panel:#141c2b;--panel2:#1a2639;--line:#29364b;--text:#f4f7ff;--muted:#9eabc0;--accent:#8b7cff;--cyan:#4ed7d0;--gold:#ffc66e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 80% -10%,#29315a 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer;color:inherit}.shell{max-width:1050px;margin:auto;padding:18px 16px 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 20px}
+.brand{display:flex;align-items:center;gap:11px}.brand img{width:48px;height:48px}.brand strong{display:block;font-size:20px;letter-spacing:1px}.brand small{color:var(--muted)}
+.avatar{width:42px;height:42px;border-radius:15px;border:1px solid var(--line);background:var(--panel);font-size:20px}
+.hero{border:1px solid #45416e;border-radius:25px;padding:23px;background:linear-gradient(115deg,#29244d,#182b43 65%,#153d46);position:relative;overflow:hidden}
+.hero:after{content:"✦";position:absolute;left:25px;top:5px;font-size:115px;color:#ffffff12}
+.eyebrow{color:#b9b2ff;font-size:12px;font-weight:700;letter-spacing:1px}.hero h1{font-size:clamp(25px,5vw,39px);margin:9px 0}.hero p{color:#d0d7e8;max-width:570px;line-height:1.7;margin:0 0 18px}
+.primary,.secondary,.chip,.navbtn{border:0;border-radius:13px;padding:11px 15px;font-weight:700}.primary{background:linear-gradient(100deg,#8b7cff,#55cbd4);color:#101522}.secondary{background:#ffffff12;border:1px solid #ffffff24}.hero .primary{min-width:140px}
+.balance{display:flex;gap:10px;margin:14px 0 20px}.balance .tile{flex:1;background:var(--panel);border:1px solid var(--line);border-radius:17px;padding:14px}.tile small{color:var(--muted)}.tile b{display:block;font-size:24px;margin-top:4px}
+.search{display:flex;gap:9px;margin:18px 0}.search input{width:100%;min-width:0;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px;color:var(--text);outline:none}.search input:focus{border-color:var(--accent)}
+.tabs{display:flex;gap:8px;overflow:auto;padding:2px 0 15px}.chip{white-space:nowrap;background:var(--panel);border:1px solid var(--line);color:var(--muted)}.chip.active{background:#302c55;border-color:#7167c8;color:white}
+.sectionhead{display:flex;align-items:center;justify-content:space-between;margin:10px 0 13px}.sectionhead h2{font-size:19px;margin:0}.sectionhead span{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.card{background:linear-gradient(150deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:18px;padding:13px;min-width:0}
+.cardtop{display:flex;align-items:center;gap:11px}.appicon{width:51px;height:51px;border-radius:15px;display:grid;place-items:center;font-size:27px;background:linear-gradient(140deg,#34365c,#1b4650);flex-shrink:0}
+.card h3{font-size:14px;margin:0 0 4px}.card p{font-size:11px;color:var(--muted);margin:0;line-height:1.5}.cardbottom{display:flex;align-items:center;justify-content:space-between;margin-top:13px;gap:7px}.tag{font-size:10px;color:#b9c4d6}.smallbtn{background:#2b3150;border:1px solid #4a4e7d;border-radius:10px;padding:8px 11px;font-size:11px;font-weight:700}
+.notice{border:1px dashed #49566e;color:var(--muted);padding:16px;border-radius:15px;text-align:center;line-height:1.7}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:#101725ed;backdrop-filter:blur(16px);border-top:1px solid var(--line);display:flex;justify-content:center;z-index:5;padding:9px 8px calc(9px + env(safe-area-inset-bottom))}
+.bottomnav>div{width:min(600px,100%);display:flex;justify-content:space-around}.navbtn{background:none;color:var(--muted);font-size:11px;display:grid;gap:3px;justify-items:center;padding:5px 12px}.navbtn span{font-size:19px}.navbtn.active{color:#b8afff}
+.detail{background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:20px}.detailhero{display:flex;align-items:center;gap:15px;margin-bottom:18px}.detailhero .appicon{width:72px;height:72px;font-size:36px}.detail h2{margin:0 0 5px}.detail p{color:var(--muted);line-height:1.8}.detail .primary{width:100%;margin-top:12px}
+footer{text-align:center;color:#718099;font-size:11px;padding:28px 0 5px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.hero{padding:30px}.shell{padding-top:24px}}
+</style>
+</head>
+<body>
+<div class="shell" id="app">
+<header><div class="brand"><img src="icon.png" alt="NOVA PLAY"><div><strong>NOVA PLAY</strong><small>اكتشف. حمّل. العب.</small></div></div><button class="avatar" id="profile" aria-label="الحساب">👤</button></header>
+<section class="hero"><div class="eyebrow">مرحباً بك في عالمك</div><h1>كل عالم الألعاب<br>في مكان واحد ✨</h1><p>تصفّح الألعاب والتطبيقات واكتشف اختيارات جديدة. هذه نسخة تجريبية محلية قابلة للتطوير.</p><button class="primary" id="explore">استكشف المتجر　←</button></section>
+<div class="balance"><div class="tile"><small>رصيد تجريبي</small><b>0 <span style="font-size:16px">🪙</span></b></div><div class="tile"><small>عناصر في مكتبتي</small><b id="libcount">0 <span style="font-size:16px">📚</span></b></div></div>
+<div class="search"><input id="search" type="search" placeholder="ابحث عن لعبة أو تطبيق..." aria-label="بحث"><button class="secondary" id="clear">مسح</button></div>
+<nav class="tabs" aria-label="تصنيفات"><button class="chip active" data-filter="all">الكل</button><button class="chip" data-filter="games">ألعاب</button><button class="chip" data-filter="apps">تطبيقات</button><button class="chip" data-filter="popular">الأكثر شهرة</button></nav>
+<main id="main"><div class="sectionhead"><h2 id="heading">مختارات NOVA</h2><span id="count">6 عناصر</span></div><div class="grid" id="grid"></div></main>
+<footer>الإصدار التجريبي 1.30 · NOVA PLAY</footer>
+</div>
+<nav class="bottomnav"><div><button class="navbtn active" data-page="home"><span>⌂</span>الرئيسية</button><button class="navbtn" data-page="games"><span>🎮</span>الألعاب</button><button class="navbtn" data-page="apps"><span>▦</span>التطبيقات</button><button class="navbtn" data-page="library"><span>▣</span>مكتبتي</button></div></nav>
+<script>
+const catalog=[
+{name:"Free Fire",type:"games",icon:"🔥",desc:"لعبة باتل رويال ومنافسات جماعية.",category:"أكشن",popular:1,info:"صفحة تعريف تجريبية. حمّل اللعبة من مصدرها الرسمي أو متجر جهازك."},
+{name:"PUBG MOBILE",type:"games",icon:"🎯",desc:"معارك تكتيكية وتجربة لعب جماعية.",category:"أكشن",popular:1,info:"صفحة تعريف تجريبية. لا نوفر ملف اللعبة داخل هذا النموذج."},
+{name:"EA SPORTS FC Mobile",type:"games",icon:"⚽",desc:"كوّن فريقك وخض مباريات كرة القدم.",category:"رياضة",popular:1,info:"صفحة تعريف تجريبية لمعلومات اللعبة."},
+{name:"Minecraft",type:"games",icon:"🧱",desc:"استكشف وابنِ عوالمك الإبداعية.",category:"مغامرات",popular:0,info:"صفحة تعريف تجريبية. تأكد من مصدر التنزيل الرسمي."},
+{name:"مدير الملفات",type:"apps",icon:"📁",desc:"نظّم ملفاتك ومجلداتك بسهولة.",category:"أدوات",popular:0,info:"بطاقة تطبيق تجريبية؛ لا يوجد ملف تثبيت مرفق."},
+{name:"مشغل الموسيقى",type:"apps",icon:"🎵",desc:"واجهة تجريبية لمكتبة الموسيقى.",category:"ترفيه",popular:0,info:"بطاقة تطبيق تجريبية."},
+{name:"متصفح الإنترنت",type:"apps",icon:"🌐",desc:"تصفّح الويب من تطبيقاتك المفضلة.",category:"أدوات",popular:0,info:"بطاقة تطبيق تجريبية."},
+{name:"محرر الصور",type:"apps",icon:"🖼️",desc:"أفكار وأدوات لتحرير الصور.",category:"إبداع",popular:0,info:"بطاقة تطبيق تجريبية."}
+];
+let filter="all",page="home",library=[];
+const grid=document.querySelector("#grid"),heading=document.querySelector("#heading"),count=document.querySelector("#count"),main=document.querySelector("#main"),search=document.querySelector("#search");
+function card(x){return `<article class="card"><div class="cardtop"><div class="appicon">${x.icon}</div><div style="min-width:0"><h3>${x.name}</h3><p>${x.desc}</p></div></div><div class="cardbottom"><span class="tag">${x.category} · ${x.type==="games"?"لعبة":"تطبيق"}</span><button class="smallbtn" data-open="${x.name}">التفاصيل</button></div></article>`}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ let list=catalog.filter(x=>(filter==="all"||(filter==="popular"?x.popular:x.type===filter))&&(!q||(x.name+" "+x.desc+" "+x.category).toLowerCase().includes(q)));
+ if(page==="games")list=list.filter(x=>x.type==="games");
+ if(page==="apps")list=list.filter(x=>x.type==="apps");
+ if(page==="library")list=catalog.filter(x=>library.includes(x.name));
+ heading.textContent=page==="library"?"مكتبتي":page==="games"?"الألعاب":page==="apps"?"التطبيقات":filter==="popular"?"الأكثر شهرة":"مختارات NOVA";
+ count.textContent=list.length+" عناصر";
+ grid.innerHTML=list.length?list.map(card).join(""):`<div class="notice" style="grid-column:1/-1">${page==="library"?"مكتبتك فارغة حالياً. أضف عناصر من المتجر لتظهر هنا.":"لا توجد نتائج مطابقة. جرّب كلمة بحث أخرى."}</div>`;
+ document.querySelector("#libcount").innerHTML=library.length+' <span style="font-size:16px">📚</span>';
+ grid.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>detail(b.dataset.open)));
+}
+function detail(name){
+ const x=catalog.find(i=>i.name===name);if(!x)return;
+ main.innerHTML=`<button class="chip" id="back">→ رجوع للمتجر</button><section class="detail" style="margin-top:13px"><div class="detailhero"><div class="appicon">${x.icon}</div><div><h2>${x.name}</h2><span class="tag">${x.category} · ${x.type==="games"?"لعبة":"تطبيق"}</span></div></div><p>${x.desc}</p><p>${x.info}</p><div class="notice">هذه نسخة واجهة تجريبية. زر التنزيل غير مفعّل حتى نضيف ملفات مرخّصة وروابط موثوقة.</div><button class="primary" id="add">${library.includes(x.name)?"موجود في مكتبتي ✓":"أضف إلى مكتبتي"}</button></section>`;
+ main.querySelector("#back").onclick=()=>{main.innerHTML='<div class="sectionhead"><h2 id="heading"></h2><span id="count"></span></div><div class="grid" id="grid"></div>';render()};
+ main.querySelector("#add").onclick=()=>{if(!library.includes(name))library.push(name);main.querySelector("#add").textContent="تمت الإضافة ✓";document.querySelector("#libcount").innerHTML=library.length+' <span style="font-size:16px">📚</span>';};
+}
+document.querySelectorAll("[data-filter]").forEach(b=>b.addEventListener("click",()=>{filter=b.dataset.filter;document.querySelectorAll("[data-filter]").forEach(z=>z.classList.toggle("active",z===b));page="home";render()}));
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>{page=b.dataset.page;filter="all";document.querySelectorAll("[data-page]").forEach(z=>z.classList.toggle("active",z===b));document.querySelectorAll("[data-filter]").forEach(z=>z.classList.toggle("active",z.dataset.filter==="all"));render()}));
+search.addEventListener("input",render);document.querySelector("#clear").onclick=()=>{search.value="";render()};document.querySelector("#explore").onclick=()=>{page="home";filter="all";document.querySelector('[data-filter="all"]').click();document.querySelector("#grid").scrollIntoView({behavior:"smooth",block:"start"})};
+document.querySelector("#profile").onclick=()=>alert("حساب تجريبي\\nالرصيد: 0 نقطة\\nالإصدار: 1.30");
+render();
+if("serviceWorker" in navigator && location.protocol.startsWith("http"))navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body></html>

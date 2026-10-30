@@ -1,0 +1,24 @@
+{
+  "name": "NOVA PLAY",
+  "version": "1.30",
+  "short_name": "NOVA PLAY",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0c111b",
+  "theme_color": "#101522",
+  "description": "متجر تجريبي للألعاب والتطبيقات",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
