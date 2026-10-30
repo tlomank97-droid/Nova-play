@@ -1,0 +1,19 @@
+NOVA PLAY 1.30 — موارد أيقونة Android
+
+تم تجهيز أيقونة NOVA PLAY بصيغ PNG وأحجام Android launcher المختلفة:
+- mipmap-mdpi
+- mipmap-hdpi
+- mipmap-xhdpi
+- mipmap-xxhdpi
+- mipmap-xxxhdpi
+- adaptive icon XML ضمن mipmap-anydpi-v26
+
+طريقة الدمج عند بناء تطبيق Android:
+1) انسخ مجلد res الموجود هنا إلى app/src/main/res في مشروع Android.
+2) تأكد أن AndroidManifest.xml يحتوي داخل <application> على:
+   android:icon="@mipmap/ic_launcher"
+   android:roundIcon="@mipmap/ic_launcher_round"
+3) أعد بناء APK وجرّبه على الجهاز.
+
+تنبيه مهم:
+هذه موارد الأيقونة المدمجة في ملفات المشروع، وليست APK مبنياً. لا يمكن تحويل ZIP إلى APK بتغيير الامتداد.
